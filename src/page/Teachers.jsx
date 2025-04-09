@@ -1,6 +1,6 @@
 import { Search } from 'lucide-react'
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import useGetApi from '../Hooks/GetBezId'
 
 function Teachers() {
@@ -52,22 +52,21 @@ function Teachers() {
 								fullname.toLowerCase().includes(searchQuery.toLowerCase())
 							)
 							?.map(
-								({ fullname, email, phone_number, role, createdAt , id}, index) => {
+								(
+									{ fullname, email, phone_number, role, createdAt, id },
+									index
+								) => {
 									return (
-										<tbody key={index} >
-											
+										<tbody key={index}>
 											<tr
 												className={`${
 													index % 2 == 0 ? 'bg-white' : ' bg-[#EBF6FF80]'
-												}  h-[48px] ` } 
+												}  h-[48px] `}
 											>
-												
-													<td className='max-w-[250px] px-[8px] sticky z-0 left-0 md:bg-transparent bg-[#ebf6ff]'>
-														<Link to={`/teachers/teacher/${id}`}>
-															{fullname}
-														</Link>
-													</td>
-												
+												<td className='max-w-[150px] px-[8px] sticky z-0 left-0 md:bg-transparent bg-[#ebf6ff]'>
+													<Link to={`/teachers/teacher/${id}`}>{fullname}</Link>
+												</td>
+
 												<td>{email}</td>
 												<td>{phone_number}</td>
 												<td>{role}</td>
