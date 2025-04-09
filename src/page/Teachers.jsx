@@ -63,7 +63,7 @@ function Teachers() {
 													index % 2 == 0 ? 'bg-white' : ' bg-[#EBF6FF80]'
 												}  h-[48px] `}
 											>
-												<td className='max-w-[100px] px-[8px] sticky z-0 left-0 md:bg-transparent bg-[#ebf6ff]'>
+												<td className='max-w-[125px] px-[8px] sticky z-0 left-0 md:bg-transparent bg-[#ebf6ff]'>
 													<Link to={`/teachers/teacher/${id}`}>{fullname}</Link>
 												</td>
 
